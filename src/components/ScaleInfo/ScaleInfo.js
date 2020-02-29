@@ -1,166 +1,151 @@
-import React from "react";
+import React, { Suspense, useContext } from "react";
+
 import { permute } from "../../constants/helpers";
-import { modeFactory, allStrings, colors } from "./scaleInfoHelpers";
-import { CycleDiv, CycleArr } from "../ChordCycles/ChordCycles";
-import { Frets } from "../../constants/scales";
-
 import {
-  Wrap,
-  LargeContainer,
-  PianoKey,
-  PianoContainer,
-  Dots
-} from "../../styledComponents";
-import uuidv1 from "uuid/v1";
+  modeFactory,
+  allStrings,
+  colors,
+  PianoOrFretboard,
+  chordNames,
+  triadNames,
+  seventhChords,
+  triadChords,
+  arpsCond
+} from "./helpers";
 
-let idx = 0;
-// (x, y) = (r * cos(θ), r * sin(θ)) r is the radius of a circle and θ is the angle in radians
-export const ScaleInfo = (
-  scale,
-  tuning,
-  root,
-  numsOn,
-  Chromatic,
-  changeFavs,
-  favs,
-  arpsOn,
-  showArps,
-  favsArr,
-  cycle,
-  windowWidth,
-  triadsOn,
-  relative,
-  favsShowing = favsArr && favs.length
-) => {
-  if (arpsOn) scale = [scale[idx]];
+import { CycleDiv } from "../ChordCycles/ChordCycles";
+import { Frets } from "../../constants/scales";
+import { SideDots } from "../../styledComponents";
+import { Context } from "../../Store";
+import { FavsButton } from "./FavsButton";
+import { styleObj, chordInversions, IntervalsAndInversions, ArpeggiosButton } from "./styledComponents";
+
+const mapModeToRootNote = (scale, root) => scale[0][1].map(x => root[x]);
+function ScaleInfo() {
+  let { scale } = useContext(Context);
+  const {
+    tuning,
+    root,
+    numsOn,
+    changeFavs,
+    favs,
+    arpsMode,
+    showArps,
+    favsArr,
+    cycle,
+    windowWidth,
+    triadsOn,
+    relative,
+    displayFavs,
+    cycleIndex,
+    changeCycleIndex,
+    isLeftHanded
+  } = useContext(Context);
+  const favsShowing = favsArr && favs.length;
+
+  if (arpsMode) scale = [scale[cycleIndex]];
   if (favsShowing) scale = favs;
-  if (favsShowing && arpsOn) scale = [scale[idx]];
-  if (favs.length === 0) favsArr = false;
-  return scale.map((mode, scaleIndex) => {
+  if (favsShowing && arpsMode) scale = [scale[cycleIndex]];
+  if (favs.length === 0) displayFavs(false);
+
+  const mapScale = (mode, scaleIndex) => {
     const [degrees, formula, name, chords] = modeFactory(mode, root);
-    let formula2 =
-      relative && !favsArr
-        ? permute(scale[0][1].map(x => root[x]), scaleIndex)
-        : formula;
-    const propsAllStrings = [
-      Chromatic,
-      tuning,
-      degrees,
-      numsOn,
-      formula2,
-      windowWidth
-    ];
-    const containerProps = str => [str, colors, formula2, degrees, windowWidth];
 
-    const cCycle = triadsOn
-      ? CycleArr(chords)[cycle].map(x =>
-          x.slice(0, 3) === "dom" ? "maj" : x.slice(0, 3)
-        )
-      : CycleArr(chords)[cycle];
+    let relativeFormula = relative && !favsArr ? permute(mapModeToRootNote(scale, root), scaleIndex) : formula;
 
-    const dCycle = CycleArr(degrees)[cycle];
+    const inversions = relativeFormula.map((_, j) => permute(relativeFormula, j).filter((_, k) => k % 2 === 0));
 
-    const fCycle = CycleArr(formula2)[cycle];
-
-    const inversions = formula2
-      .map((_, j) => permute(formula2, j))
-      .map(y => y.filter((_, k) => k % 2 === 0));
-
-    const inversionFactory = n => [...Array(n)].map((_, i) => inversions[i]);
-
-    const arpsCond = arpsOn
-      ? CycleArr(inversionFactory(inversions.length))[cycle]
-      : inversionFactory(1);
-
-    const pianoFretboardCond = (string, i, inversion) =>
-      tuning[0] === 0 ? (
-        <PianoContainer windowWidth={windowWidth < 1000 ? 13 : 25}>
-          {PianoKey(...containerProps(string), numsOn, inversion, arpsOn)}
-        </PianoContainer>
-      ) : (
-        <Wrap>
-          {LargeContainer(
-            ...containerProps(string),
-            i,
-            numsOn,
-            inversion,
-            arpsOn
-          )}
-        </Wrap>
-      );
-
-    const allStrFn = inversion =>
-      allStrings(...propsAllStrings, arpsOn ? inversion : formula2).map(
-        (string, i) => (
-          <div key={uuidv1()}>{pianoFretboardCond(string, i, inversion)}</div>
+    const MapAllStrings = inversion =>
+      allStrings(
+        tuning,
+        degrees,
+        numsOn,
+        relativeFormula,
+        windowWidth,
+        arpsMode ? inversion : relativeFormula
+      ).map((string, i) =>
+        PianoOrFretboard(
+          tuning,
+          string,
+          colors,
+          relativeFormula,
+          degrees,
+          windowWidth,
+          numsOn,
+          inversion,
+          arpsMode,
+          i,
+          isLeftHanded
         )
       );
+
+    const chordInversion = dropChord => chordInversions(dropChord, inversions, numsOn, degrees, formula, cycle);
+
+    //each chord name and inversion is mapped to a div
+    const mapChords = (chordNames, chordType) =>
+      chordType.map((chord, i) => (
+        <div key={i}>
+          {chordNames[i]}
+          {chordInversion(chord)}
+        </div>
+      ));
+
+    //if triads on then slice everything before the last element.
+    const triadsOrSevenths = inversion => (triadsOn ? inversion.slice(0, 3) : inversion);
+
+    //if triads on replace dominant with major... no such thing as a dominant triad.
+    const replaceDomTriads = inversionIndex =>
+      triadsOn
+        ? chords[inversionIndex].slice(0, 3) === "dom"
+          ? "maj"
+          : chords[inversionIndex].slice(0, 3)
+        : chords[inversionIndex];
+
+    const numbersOrNotes = inversionIndex => (numsOn ? degrees[inversionIndex] : formula[inversionIndex]);
+
     return (
-      <section
-        style={{ display: "grid", justifyContent: "center" }}
-        key={uuidv1()}>
-        <div style={{ width: "90vw", maxWidth: "1750px" }}>
+      <div key={scaleIndex + mode}>
+        <div key={scaleIndex + mode}>
           {CycleDiv(
             degrees,
-            formula2,
+            relativeFormula,
             chords,
             cycle,
             colors,
             numsOn,
             name,
-            triadsOn
+            triadsOn,
+            scaleIndex,
+            relative,
+            favsArr
           )}
-          <br />
-          <button
-            onClick={() => {
-              showArps(!arpsOn);
-              idx = scaleIndex;
-            }}>
-            {!arpsOn ? `Show Arpeggios` : `Hide Arpeggios`}
-          </button>
-          <button
-            onClick={() =>
-              (favsArr && favs.includes(mode)) ||
-              (arpsOn && favsArr && favs.includes(mode))
-                ? changeFavs(() => favs.filter(y => y !== mode))
-                : favs.includes(mode)
-                ? null
-                : changeFavs(favs.concat([mode]))
-            }>
-            {favsShowing
-              ? "Remove From Favs"
-              : favs.includes(mode)
-              ? favs.length === 0
-                ? "Add To Favs"
-                : "Saved"
-              : "Add To Favs"}
-          </button>
-          <div style={{ marginTop: "10px" }}>
-            {arpsCond.map((inversion, inversionIndex) => {
-              return (
-                <div key={inversion + inversionIndex}>
-                  {arpsOn && (
-                    <div
-                      style={{
-                        background: colors[formula2.indexOf(inversion[0])],
-                        width: "6vw",
-                        margin: "auto",
-                        border: "1px solid black"
-                      }}>
-                      {numsOn ? dCycle[inversionIndex] : fCycle[inversionIndex]}{" "}
-                      {cCycle[inversionIndex]}
-                    </div>
-                  )}
-                  <br />
-                  {allStrFn(triadsOn ? inversion.slice(0, 3) : inversion)}
-                  {tuning[0] !== 0 && Dots(windowWidth, Frets(windowWidth))}
-                  <br />
-                </div>
-              );
-            })}
-          </div>
+          {ArpeggiosButton(arpsMode, showArps, scaleIndex, changeCycleIndex)}
+          {FavsButton(favsArr, favs, mode, arpsMode, changeFavs, favsShowing)}
+          {arpsMode &&
+            IntervalsAndInversions(
+              triadsOn,
+              mapChords(triadNames, triadChords),
+              mapChords(chordNames, seventhChords)
+            )}{" "}
         </div>
-      </section>
+        <br />
+        <div key={scaleIndex} style={{ paddingLeft: "10px", width: "98%", margin: "0 auto" }}>
+          {arpsCond(arpsMode, inversions, cycle).map((inversion, inversionIndex) => (
+            <div key={inversionIndex}>
+              {arpsMode && (
+                <div key={inversionIndex} style={styleObj(colors, relativeFormula, inversion).arpeggios}>
+                  {numbersOrNotes(inversionIndex) + " " + replaceDomTriads(inversionIndex)}
+                </div>
+              )}
+              {MapAllStrings(triadsOrSevenths(inversion), inversionIndex)}
+              {tuning[0] !== 0 && SideDots(windowWidth, Frets(windowWidth), isLeftHanded)}
+              <br />
+            </div>
+          ))}
+        </div>
+      </div>
     );
-  });
-};
+  };
+  return <Suspense fallback={<div>Loading...</div>}>{scale.map(mapScale)}</Suspense>;
+}
+export default ScaleInfo;
