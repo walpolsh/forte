@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "walpolsh.github.io/Forte/static/css/main.94558d28.chunk.css",
-    "main.js": "walpolsh.github.io/Forte/static/js/main.0aca11f9.chunk.js",
-    "main.js.map": "walpolsh.github.io/Forte/static/js/main.0aca11f9.chunk.js.map",
-    "runtime-main.js": "walpolsh.github.io/Forte/static/js/runtime-main.7c6c659e.js",
-    "runtime-main.js.map": "walpolsh.github.io/Forte/static/js/runtime-main.7c6c659e.js.map",
-    "static/js/2.82a2e583.chunk.js": "walpolsh.github.io/Forte/static/js/2.82a2e583.chunk.js",
-    "static/js/2.82a2e583.chunk.js.map": "walpolsh.github.io/Forte/static/js/2.82a2e583.chunk.js.map",
-    "static/js/3.ea827e28.chunk.js": "walpolsh.github.io/Forte/static/js/3.ea827e28.chunk.js",
-    "static/js/3.ea827e28.chunk.js.map": "walpolsh.github.io/Forte/static/js/3.ea827e28.chunk.js.map",
-    "index.html": "walpolsh.github.io/Forte/index.html",
-    "precache-manifest.6426f6c2d49d42d172842636c1d37503.js": "walpolsh.github.io/Forte/precache-manifest.6426f6c2d49d42d172842636c1d37503.js",
-    "service-worker.js": "walpolsh.github.io/Forte/service-worker.js",
-    "static/css/main.94558d28.chunk.css.map": "walpolsh.github.io/Forte/static/css/main.94558d28.chunk.css.map",
-    "static/media/forté-rect.png": "walpolsh.github.io/Forte/static/media/forté-rect.d81bf0bc.png"
+    "main.css": "/forte/static/css/main.94558d28.chunk.css",
+    "main.js": "/forte/static/js/main.0aca11f9.chunk.js",
+    "main.js.map": "/forte/static/js/main.0aca11f9.chunk.js.map",
+    "runtime-main.js": "/forte/static/js/runtime-main.23e0ca32.js",
+    "runtime-main.js.map": "/forte/static/js/runtime-main.23e0ca32.js.map",
+    "static/js/2.904b3598.chunk.js": "/forte/static/js/2.904b3598.chunk.js",
+    "static/js/2.904b3598.chunk.js.map": "/forte/static/js/2.904b3598.chunk.js.map",
+    "static/js/3.ea827e28.chunk.js": "/forte/static/js/3.ea827e28.chunk.js",
+    "static/js/3.ea827e28.chunk.js.map": "/forte/static/js/3.ea827e28.chunk.js.map",
+    "index.html": "/forte/index.html",
+    "precache-manifest.4f8cbe552641ef93e93653225f8a7922.js": "/forte/precache-manifest.4f8cbe552641ef93e93653225f8a7922.js",
+    "service-worker.js": "/forte/service-worker.js",
+    "static/css/main.94558d28.chunk.css.map": "/forte/static/css/main.94558d28.chunk.css.map",
+    "static/media/forté-rect.png": "/forte/static/media/forté-rect.d81bf0bc.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7c6c659e.js",
-    "static/js/2.82a2e583.chunk.js",
+    "static/js/runtime-main.23e0ca32.js",
+    "static/js/2.904b3598.chunk.js",
     "static/css/main.94558d28.chunk.css",
     "static/js/main.0aca11f9.chunk.js"
   ]
