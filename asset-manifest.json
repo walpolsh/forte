@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Forte/static/css/main.94558d28.chunk.css",
+    "main.js": "/Forte/static/js/main.97b4cff9.chunk.js",
+    "main.js.map": "/Forte/static/js/main.97b4cff9.chunk.js.map",
+    "runtime-main.js": "/Forte/static/js/runtime-main.cdde2130.js",
+    "runtime-main.js.map": "/Forte/static/js/runtime-main.cdde2130.js.map",
+    "static/js/2.b2e28d33.chunk.js": "/Forte/static/js/2.b2e28d33.chunk.js",
+    "static/js/2.b2e28d33.chunk.js.map": "/Forte/static/js/2.b2e28d33.chunk.js.map",
+    "static/js/3.28e61507.chunk.js": "/Forte/static/js/3.28e61507.chunk.js",
+    "static/js/3.28e61507.chunk.js.map": "/Forte/static/js/3.28e61507.chunk.js.map",
+    "index.html": "/Forte/index.html",
+    "precache-manifest.ad12617a60e2bfeab5e435892b3a3529.js": "/Forte/precache-manifest.ad12617a60e2bfeab5e435892b3a3529.js",
+    "service-worker.js": "/Forte/service-worker.js",
+    "static/css/main.94558d28.chunk.css.map": "/Forte/static/css/main.94558d28.chunk.css.map",
+    "static/media/forté-rect.png": "/Forte/static/media/forté-rect.d81bf0bc.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cdde2130.js",
+    "static/js/2.b2e28d33.chunk.js",
+    "static/css/main.94558d28.chunk.css",
+    "static/js/main.97b4cff9.chunk.js"
+  ]
+}
