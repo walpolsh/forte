@@ -28,12 +28,42 @@ export const Major = [Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian, Loc
 //Harmonic Minor
 let harmonicMinorChords = chordPermutations(["min/maj7", "dim b7", "maj7#5", "min7", "dom7", "maj7", "dim 7"]);
 
-const Harmonic = [["1", "2", "b3", "4", "5", "b6", "7"], [0, 2, 3, 5, 7, 8, 11], "Harmonic Minor", harmonicMinorChords[0]];
-const LocrianNat6 = [["1", "b2", "b3", "4", "b5", "6", "b7"], [0, 1, 3, 5, 6, 9, 10], "Locrian ♮6", harmonicMinorChords[1]];
-const IonianSharp5 = [["1", "2", "3", "4", "#5", "6", "7"], [0, 2, 4, 5, 8, 9, 11], "Ionian #5", harmonicMinorChords[2]];
-const DorianSharp4 = [["1", "2", "b3", "#4", "5", "6", "b7"], [0, 2, 3, 6, 7, 9, 10], "Dorian #4", harmonicMinorChords[3]];
-const PhrygianNat3 = [["1", "b2", "3", "4", "5", "b6", "b7"], [0, 1, 4, 5, 7, 8, 10], "Phrygian ♮3", harmonicMinorChords[4]];
-const LydianSharp2 = [["1", "#2", "3", "#4", "5", "6", "7"], [0, 3, 4, 6, 7, 9, 11], "Lydian #2", harmonicMinorChords[5]];
+const Harmonic = [
+  ["1", "2", "b3", "4", "5", "b6", "7"],
+  [0, 2, 3, 5, 7, 8, 11],
+  "Harmonic Minor",
+  harmonicMinorChords[0]
+];
+const LocrianNat6 = [
+  ["1", "b2", "b3", "4", "b5", "6", "b7"],
+  [0, 1, 3, 5, 6, 9, 10],
+  "Locrian ♮6",
+  harmonicMinorChords[1]
+];
+const IonianSharp5 = [
+  ["1", "2", "3", "4", "#5", "6", "7"],
+  [0, 2, 4, 5, 8, 9, 11],
+  "Ionian #5",
+  harmonicMinorChords[2]
+];
+const DorianSharp4 = [
+  ["1", "2", "b3", "#4", "5", "6", "b7"],
+  [0, 2, 3, 6, 7, 9, 10],
+  "Dorian #4",
+  harmonicMinorChords[3]
+];
+const PhrygianNat3 = [
+  ["1", "b2", "3", "4", "5", "b6", "b7"],
+  [0, 1, 4, 5, 7, 8, 10],
+  "Phrygian ♮3",
+  harmonicMinorChords[4]
+];
+const LydianSharp2 = [
+  ["1", "#2", "3", "#4", "5", "6", "7"],
+  [0, 3, 4, 6, 7, 9, 11],
+  "Lydian #2",
+  harmonicMinorChords[5]
+];
 const Locrianb4Alt7 = [
   ["1", "b2", "b3", "b4", "b5", "b6", "bb7"],
   [0, 1, 3, 4, 6, 8, 9],
@@ -41,25 +71,63 @@ const Locrianb4Alt7 = [
   harmonicMinorChords[6]
 ];
 
-export const HarmonicMinor = [Harmonic, LocrianNat6, IonianSharp5, DorianSharp4, PhrygianNat3, LydianSharp2, Locrianb4Alt7];
+export const HarmonicMinor = [
+  Harmonic,
+  LocrianNat6,
+  IonianSharp5,
+  DorianSharp4,
+  PhrygianNat3,
+  LydianSharp2,
+  Locrianb4Alt7
+];
 let melodicMinorChords = chordPermutations(["min/maj7", "min7", "maj7#5", "dom7", "dom7", "dim b7", "dim b7"]);
 
 const Melodic = [["1", "2", "b3", "4", "5", "6", "7"], [0, 2, 3, 5, 7, 9, 11], "Melodic Minor", melodicMinorChords[0]];
 const Dorianb2 = [["1", "b2", "b3", "4", "5", "6", "b7"], [0, 1, 3, 5, 7, 9, 10], "Dorian b2", melodicMinorChords[1]];
 const LydianAug = [["1", "2", "3", "#4", "#5", "6", "7"], [0, 2, 4, 6, 8, 9, 11], "Lydian #5", melodicMinorChords[2]];
 const LydianDom = [["1", "2", "3", "#4", "5", "6", "b7"], [0, 2, 4, 6, 7, 9, 10], "Lydian b7", melodicMinorChords[3]];
-const Mixolydianb6 = [["1", "2", "3", "4", "5", "b6", "b7"], [0, 2, 4, 5, 7, 8, 10], "Mixolydian b6", melodicMinorChords[4]];
-const LocrianNat2 = [["1", "2", "b3", "4", "b5", "b6", "b7"], [0, 2, 3, 5, 6, 8, 10], "Locrian ♮2", melodicMinorChords[5]];
-const Locrianb4 = [["1", "b2", "b3", "b4", "b5", "b6", "b7"], [0, 1, 3, 4, 6, 8, 10], "Locrian b4", melodicMinorChords[6]];
+const Mixolydianb6 = [
+  ["1", "2", "3", "4", "5", "b6", "b7"],
+  [0, 2, 4, 5, 7, 8, 10],
+  "Mixolydian b6",
+  melodicMinorChords[4]
+];
+const LocrianNat2 = [
+  ["1", "2", "b3", "4", "b5", "b6", "b7"],
+  [0, 2, 3, 5, 6, 8, 10],
+  "Locrian ♮2",
+  melodicMinorChords[5]
+];
+const Locrianb4 = [
+  ["1", "b2", "b3", "b4", "b5", "b6", "b7"],
+  [0, 1, 3, 4, 6, 8, 10],
+  "Locrian b4",
+  melodicMinorChords[6]
+];
 export const MelodicMinor = [Melodic, Dorianb2, LydianAug, LydianDom, Mixolydianb6, LocrianNat2, Locrianb4];
 //Harmonic Major
 let harmonicMajorChords = chordPermutations(["maj7", "dim b7", "min7", "min/maj7", "dom7", "maj7#5", "dim 7"]);
 
-const HarmonicMaj = [["1", "2", "3", "4", "5", "b6", "7"], [0, 2, 4, 5, 7, 8, 11], "Harmonic Major", harmonicMajorChords[0]];
+const HarmonicMaj = [
+  ["1", "2", "3", "4", "5", "b6", "7"],
+  [0, 2, 4, 5, 7, 8, 11],
+  "Harmonic Major",
+  harmonicMajorChords[0]
+];
 const Dorianb5 = [["1", "2", "b3", "4", "b5", "6", "b7"], [0, 2, 3, 5, 6, 9, 10], "Dorian b5", harmonicMajorChords[1]];
-const Phrygianb4 = [["1", "b2", "b3", "b4", "5", "b6", "b7"], [0, 1, 3, 4, 7, 8, 10], "Phrygian b4", harmonicMajorChords[2]];
+const Phrygianb4 = [
+  ["1", "b2", "b3", "b4", "5", "b6", "b7"],
+  [0, 1, 3, 4, 7, 8, 10],
+  "Phrygian b4",
+  harmonicMajorChords[2]
+];
 const Lydianb3 = [["1", "2", "b3", "#4", "5", "6", "b7"], [0, 2, 3, 6, 7, 9, 10], "Lydian b3", harmonicMajorChords[3]];
-const Mixolydianb2 = [["1", "b2", "3", "4", "5", "6", "b7"], [0, 1, 4, 5, 7, 8, 10], "Dorian b2", harmonicMajorChords[4]];
+const Mixolydianb2 = [
+  ["1", "b2", "3", "4", "5", "6", "b7"],
+  [0, 1, 4, 5, 7, 8, 10],
+  "Dorian b2",
+  harmonicMajorChords[4]
+];
 
 const LydianSharp2Sharp5 = [
   ["1", "#2", "3", "#4", "#5", "6", "7"],
@@ -67,16 +135,44 @@ const LydianSharp2Sharp5 = [
   "Lydian #2 #5",
   harmonicMajorChords[5]
 ];
-const Locrianbb7 = [["1", "b2", "b3", "4", "b5", "b6", "bb7"], [0, 1, 3, 4, 6, 8, 9], "Locrian bb7", harmonicMajorChords[6]];
+const Locrianbb7 = [
+  ["1", "b2", "b3", "4", "b5", "b6", "bb7"],
+  [0, 1, 3, 4, 6, 8, 9],
+  "Locrian bb7",
+  harmonicMajorChords[6]
+];
 
-export const HarmonicMajor = [HarmonicMaj, Dorianb5, Phrygianb4, Lydianb3, Mixolydianb2, LydianSharp2Sharp5, Locrianbb7];
+export const HarmonicMajor = [
+  HarmonicMaj,
+  Dorianb5,
+  Phrygianb4,
+  Lydianb3,
+  Mixolydianb2,
+  LydianSharp2Sharp5,
+  Locrianbb7
+];
 
 // Hungarian Major
 let hungarianMajorChords = chordPermutations(["dom7", "dim 7", "dim b7", "dim b7", "min/maj7b5", "min7", "min/bb7"]);
 
-const HungarianMaj = [["1", "#2", "3", "#4", "5", "6", "b7"], [0, 3, 4, 6, 7, 9, 10], "Hungarian Major", hungarianMajorChords[0]];
-const Altb6bb7 = [["1", "b2", "b3", "b4", "b5", "bb6", "bb7"], [0, 1, 3, 4, 6, 7, 9], "Alt b6 bb7", hungarianMajorChords[1]];
-const Locrian27 = [["1", "2", "b3", "4", "b5", "b6", "7"], [0, 2, 3, 5, 6, 8, 11], "Locrian ♮2 ♮7", hungarianMajorChords[2]];
+const HungarianMaj = [
+  ["1", "#2", "3", "#4", "5", "6", "b7"],
+  [0, 3, 4, 6, 7, 9, 10],
+  "Hungarian Major",
+  hungarianMajorChords[0]
+];
+const Altb6bb7 = [
+  ["1", "b2", "b3", "b4", "b5", "bb6", "bb7"],
+  [0, 1, 3, 4, 6, 7, 9],
+  "Alt b6 bb7",
+  hungarianMajorChords[1]
+];
+const Locrian27 = [
+  ["1", "2", "b3", "4", "b5", "b6", "7"],
+  [0, 2, 3, 5, 6, 8, 11],
+  "Locrian ♮2 ♮7",
+  hungarianMajorChords[2]
+];
 const Alt6 = [["1", "b2", "b3", "b4", "b5", "6", "b7"], [0, 1, 3, 4, 6, 9, 10], "Alt ♮6", hungarianMajorChords[3]];
 const MelodicAugented = [
   ["1", "2", "b3", "4", "#5", "6", "7"],
@@ -84,7 +180,12 @@ const MelodicAugented = [
   "Melodic Augmented",
   hungarianMajorChords[4]
 ];
-const Dorianb2Sharp4 = [["1", "b2", "b3", "#4", "5", "6", "b7"], [0, 1, 3, 6, 7, 9, 10], "Dorian b2 #4", hungarianMajorChords[5]];
+const Dorianb2Sharp4 = [
+  ["1", "b2", "b3", "#4", "5", "6", "b7"],
+  [0, 1, 3, 6, 7, 9, 10],
+  "Dorian b2 #4",
+  hungarianMajorChords[5]
+];
 const LydianAugSharp3 = [
   ["1", "b2", "b3", "b4", "5", "b6", "bb7"],
   [0, 1, 3, 4, 7, 8, 9],
@@ -94,13 +195,34 @@ const LydianAugSharp3 = [
 
 // [0, 2, 4, 5, 7, 9, 11]
 
-export const HungarianMajor = [HungarianMaj, Altb6bb7, Locrian27, Alt6, MelodicAugented, Dorianb2Sharp4, LydianAugSharp3];
+export const HungarianMajor = [
+  HungarianMaj,
+  Altb6bb7,
+  Locrian27,
+  Alt6,
+  MelodicAugented,
+  Dorianb2Sharp4,
+  LydianAugSharp3
+];
 
 // Hungarian minor
 
-let hungarianMinorChords = chordPermutations(["min/maj7", "maj7/b5", "maj7/#5", "dim 7/sus2", "maj7", "maj7", "min/bb7"]);
+let hungarianMinorChords = chordPermutations([
+  "min/maj7",
+  "maj7/b5",
+  "maj7/#5",
+  "dim 7/sus2",
+  "maj7",
+  "maj7",
+  "min/bb7"
+]);
 
-const HungarianMin = [["1", "2", "b3", "#4", "5", "b6", "7"], [0, 2, 3, 6, 7, 8, 11], "Hungarian Minor", hungarianMinorChords[0]];
+const HungarianMin = [
+  ["1", "2", "b3", "#4", "5", "b6", "7"],
+  [0, 2, 3, 6, 7, 8, 11],
+  "Hungarian Minor",
+  hungarianMinorChords[0]
+];
 const Oriental = [["1", "b2", "3", "4", "b5", "6", "b7"], [0, 1, 4, 5, 6, 9, 10], "Oriental", hungarianMinorChords[1]];
 const IonianAugmented2 = [
   ["1", "#2", "3", "4", "#5", "6", "7"],
@@ -146,19 +268,70 @@ export const HungarianMinor = [
 // Neapolitan Minor
 let neapolitanMinorChords = chordPermutations(["min/maj7", "maj7", "dom7", "min7", "dom7/b5", "maj7", "dim 7/sus2"]);
 
-const Neapolitan = [["1", "b2", "b3", "4", "5", "b6", "7"], [0, 1, 3, 5, 7, 8, 11], "Neapolitan Minor", neapolitanMinorChords[0]];
-const LydianSharp6 = [["1", "2", "3", "#4", "5", "#6", "7"], [0, 2, 4, 6, 7, 10, 11], "Lydian #6", neapolitanMinorChords[1]];
-const DominantSharp5 = [["1", "2", "3", "4", "#5", "6", "b7"], [0, 2, 4, 5, 8, 9, 11], "Dominant #5", neapolitanMinorChords[2]];
-const AeoleanSharp4 = [["1", "2", "b3", "#4", "5", "b6", "b7"], [0, 2, 3, 6, 7, 8, 10], "Aeolean #4", neapolitanMinorChords[3]];
-const LocrianNat3 = [["1", "b2", "3", "4", "b5", "b6", "b7"], [0, 1, 4, 5, 6, 8, 10], "Locrian ♮3", neapolitanMinorChords[4]];
-const IonianSharp2 = [["1", "#2", "3", "4", "5", "6", "7"], [0, 3, 4, 5, 7, 9, 11], "Ionian #2", neapolitanMinorChords[5]];
-const Altb3bb7 = [["1", "b2", "bb3", "b4", "b5", "b6", "bb7"], [0, 1, 2, 4, 6, 8, 9], "Alt b3 bb7", neapolitanMinorChords[6]];
+const Neapolitan = [
+  ["1", "b2", "b3", "4", "5", "b6", "7"],
+  [0, 1, 3, 5, 7, 8, 11],
+  "Neapolitan Minor",
+  neapolitanMinorChords[0]
+];
+const LydianSharp6 = [
+  ["1", "2", "3", "#4", "5", "#6", "7"],
+  [0, 2, 4, 6, 7, 10, 11],
+  "Lydian #6",
+  neapolitanMinorChords[1]
+];
+const DominantSharp5 = [
+  ["1", "2", "3", "4", "#5", "6", "b7"],
+  [0, 2, 4, 5, 8, 9, 11],
+  "Dominant #5",
+  neapolitanMinorChords[2]
+];
+const AeoleanSharp4 = [
+  ["1", "2", "b3", "#4", "5", "b6", "b7"],
+  [0, 2, 3, 6, 7, 8, 10],
+  "Aeolean #4",
+  neapolitanMinorChords[3]
+];
+const LocrianNat3 = [
+  ["1", "b2", "3", "4", "b5", "b6", "b7"],
+  [0, 1, 4, 5, 6, 8, 10],
+  "Locrian ♮3",
+  neapolitanMinorChords[4]
+];
+const IonianSharp2 = [
+  ["1", "#2", "3", "4", "5", "6", "7"],
+  [0, 3, 4, 5, 7, 9, 11],
+  "Ionian #2",
+  neapolitanMinorChords[5]
+];
+const Altb3bb7 = [
+  ["1", "b2", "bb3", "b4", "b5", "b6", "bb7"],
+  [0, 1, 2, 4, 6, 8, 9],
+  "Alt b3 bb7",
+  neapolitanMinorChords[6]
+];
 
-export const NeapolitanMinor = [Neapolitan, LydianSharp6, DominantSharp5, AeoleanSharp4, LocrianNat3, IonianSharp2, Altb3bb7];
+export const NeapolitanMinor = [
+  Neapolitan,
+  LydianSharp6,
+  DominantSharp5,
+  AeoleanSharp4,
+  LocrianNat3,
+  IonianSharp2,
+  Altb3bb7
+];
 
 //Neapolitan Major
 
-let neapolitanMajorChords = chordPermutations(["min/maj7", "maj7/#5", "dom7/#5", "dom7", "dom7/b5", "dim 7", "dim 7/sus2"]);
+let neapolitanMajorChords = chordPermutations([
+  "min/maj7",
+  "maj7/#5",
+  "dom7/#5",
+  "dom7",
+  "dom7/b5",
+  "dim 7",
+  "dim 7/sus2"
+]);
 
 const NeapolitanMaj = [
   ["1", "b2", "b3", "4", "5", "6", "7"],
@@ -178,12 +351,35 @@ const LydianDomSharp5 = [
   "Lydian Dominant #5",
   neapolitanMajorChords[2]
 ];
-const LydianMinor = [["1", "2", "3", "#4", "#5", "6", "b7"], [0, 2, 4, 6, 8, 9, 10], "Lydian Minor", neapolitanMajorChords[3]];
-const MajorLocrian = [["1", "2", "3", "4", "b5", "b6", "b7"], [0, 2, 4, 5, 6, 8, 10], "Major Locrian", neapolitanMajorChords[4]];
+const LydianMinor = [
+  ["1", "2", "3", "#4", "#5", "6", "b7"],
+  [0, 2, 4, 6, 8, 9, 10],
+  "Lydian Minor",
+  neapolitanMajorChords[3]
+];
+const MajorLocrian = [
+  ["1", "2", "3", "4", "b5", "b6", "b7"],
+  [0, 2, 4, 5, 6, 8, 10],
+  "Major Locrian",
+  neapolitanMajorChords[4]
+];
 const AltNat2 = [["1", "2", "b3", "b4", "b5", "b6", "b7"], [0, 2, 3, 4, 6, 8, 10], "Alt ♮2", neapolitanMajorChords[5]];
-const AltNat3 = [["1", "b2", "bb3", "b4", "b5", "b6", "b7"], [0, 1, 2, 4, 6, 8, 10], "Alt ♮2", neapolitanMajorChords[6]];
+const AltNat3 = [
+  ["1", "b2", "bb3", "b4", "b5", "b6", "b7"],
+  [0, 1, 2, 4, 6, 8, 10],
+  "Alt ♮2",
+  neapolitanMajorChords[6]
+];
 
-export const NeapolitanMajor = [NeapolitanMaj, LydianAugSharp6, LydianDomSharp5, LydianMinor, MajorLocrian, AltNat2, AltNat3];
+export const NeapolitanMajor = [
+  NeapolitanMaj,
+  LydianAugSharp6,
+  LydianDomSharp5,
+  LydianMinor,
+  MajorLocrian,
+  AltNat2,
+  AltNat3
+];
 
 const Hirojoshi1 = [["1", "2", "b3", "5", "b6"], [0, 2, 3, 7, 8], "Hirojoshi", neapolitanMinorChords[1]];
 const Hirojoshi2 = [["1", "b2", "4", "b5", "b7"], [0, 1, 5, 6, 10], "Hirojoshi Mode 2", neapolitanMinorChords[1]];
@@ -214,14 +410,54 @@ let bebopDomChords = chordPermutations(["dom7", "min/maj6", "maj6/b4", "maj7", "
 // 1  2  3  4  5  6  7
 //[0, 2, 4, 5, 7, 9, 11]
 
-const BebopDom = [["1", "2", "3", "4", "5", "6", "b7", "7"], [0, 2, 4, 5, 7, 9, 10, 11], "Bebop Dominant", bebopDomChords[0]];
-const Bebop2 = [["1", "2", "b3", "4", "5", "b6", "6", "b7"], [0, 2, 3, 5, 7, 8, 9, 10], "Bebop Dominant 2", bebopDomChords[1]];
-const Bebop3 = [["1", "b2", "b3", "4", "b5", "5", "b6", "b7"], [0, 1, 3, 5, 6, 7, 8, 10], "Bebop Dominant 3", bebopDomChords[2]];
-const Bebop4 = [["1", "2", "3", "4", "b5", "5", "6", "7"], [0, 2, 4, 5, 6, 7, 9, 11], "Bebop Dominant 4", bebopDomChords[3]];
-const Bebop5 = [["1", "2", "b3", "3", "4", "5", "6", "b7"], [0, 2, 3, 4, 5, 7, 9, 11], "Bebop Dominant 5", bebopDomChords[4]];
-const Bebop6 = [["1", "b2", "2", "b3", "4", "5", "b6", "b7"], [0, 1, 2, 3, 5, 7, 8, 10], "Bebop Dominant 6", bebopDomChords[5]];
-const Bebop7 = [["1", "b2", "2", "3", "#4", "5", "6", "7"], [0, 1, 2, 4, 6, 7, 9, 11], "Bebop Dominant 7", bebopDomChords[6]];
-const Bebop8 = [["1", "b2", "b3", "4", "b5", "b6", "b7", "7"], [0, 1, 3, 5, 6, 8, 10, 11], "Bebop Dominant 8", bebopDomChords[7]];
+const BebopDom = [
+  ["1", "2", "3", "4", "5", "6", "b7", "7"],
+  [0, 2, 4, 5, 7, 9, 10, 11],
+  "Bebop Dominant",
+  bebopDomChords[0]
+];
+const Bebop2 = [
+  ["1", "2", "b3", "4", "5", "b6", "6", "b7"],
+  [0, 2, 3, 5, 7, 8, 9, 10],
+  "Bebop Dominant 2",
+  bebopDomChords[1]
+];
+const Bebop3 = [
+  ["1", "b2", "b3", "4", "b5", "5", "b6", "b7"],
+  [0, 1, 3, 5, 6, 7, 8, 10],
+  "Bebop Dominant 3",
+  bebopDomChords[2]
+];
+const Bebop4 = [
+  ["1", "2", "3", "4", "b5", "5", "6", "7"],
+  [0, 2, 4, 5, 6, 7, 9, 11],
+  "Bebop Dominant 4",
+  bebopDomChords[3]
+];
+const Bebop5 = [
+  ["1", "2", "b3", "3", "4", "5", "6", "b7"],
+  [0, 2, 3, 4, 5, 7, 9, 11],
+  "Bebop Dominant 5",
+  bebopDomChords[4]
+];
+const Bebop6 = [
+  ["1", "b2", "2", "b3", "4", "5", "b6", "b7"],
+  [0, 1, 2, 3, 5, 7, 8, 10],
+  "Bebop Dominant 6",
+  bebopDomChords[5]
+];
+const Bebop7 = [
+  ["1", "b2", "2", "3", "#4", "5", "6", "7"],
+  [0, 1, 2, 4, 6, 7, 9, 11],
+  "Bebop Dominant 7",
+  bebopDomChords[6]
+];
+const Bebop8 = [
+  ["1", "b2", "b3", "4", "b5", "b6", "b7", "7"],
+  [0, 1, 3, 5, 6, 8, 10, 11],
+  "Bebop Dominant 8",
+  bebopDomChords[7]
+];
 
 export const BebopDominant = [BebopDom, Bebop2, Bebop3, Bebop4, Bebop5, Bebop6, Bebop7, Bebop8];
 
@@ -251,10 +487,10 @@ export const Scales = [
   HungarianMajor,
   HungarianMinor,
   NeapolitanMinor,
-  NeapolitanMajor
-  // BebopDominant
-  // Hirojoshi,
-  // Kumoi,
-  // Pentatonic,
-  // Symmetrical
+  NeapolitanMajor,
+  BebopDominant,
+  Hirojoshi,
+  Kumoi,
+  Pentatonic,
+  Symmetrical
 ];
