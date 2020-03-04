@@ -1,26 +1,55 @@
-![Forté](./forté.png)
+# Forté - Scale Encyclopedia
 
-The Forté web app provides a colourful and dynamic way to visualize musical scales, chords and modes with an easy to use interface.
+> _This application began as way for me to learn more about web developement and programming but quickly evolved into a tool that combined my knowledge of music with this path I've been taking into the world of CS. I hope this is useful from an educational standpoint and helps demonstrates a few of my skills as a programmer. - Paul_
+
+## Overview
+
+Forté provides a colourful and dynamic way to visualize musical scales, chords and modes for multiple instruments.
 
 Every scale, chord and mode has been algorithmically generated to provide a venerable encylopedia for musicians of any background.
 
-Forté is optimized for desktop use:
-![Forté Desktop](./forte-desktop.png)
+## Designed mobile first:
 
-But it is also designed for mobile use:
-![Forté Mobile](./forte-mobile.png)
+<div >
+  <img width="300" height="600" src="./forte-mobile.png">
+</div>
 
-In addition to viewing scales in their complete form you break them out into arpeggios and view them in cycles:
-![Forté Arpeggios](./forte-arpeggios.png)
+## Optimized for desktop use:
 
-Forté also features the ability to save your favourite scales to your browser's local storage:
-![Forté Saved](./forte-saved.png)
+<div >
+  <img width="800" height="500" src="./forte-desktop.png">
+</div>
 
-Inside the favourites menu you can access all of the same features, and remove scales you no longer use:
-![Forté Fav](./forte-favourites.png)
+## Choose from multiple tunings, scales and cycles:
 
-I hope you have fun trying out Forté and keep an eye out for incremental improvements in the future!
+<div >
+  <img width="500" height="500" src="./forte-tsc.png">
+</div>
 
-_This application was started as an exercise to learn more about web developement and programming but quickly evolved into a tool that combined my knowledge from two different fields. I hope this application is both useful from an educational standpoint and demonstrates a few of my skills as a programmer._
+## Break out scales into arpeggios:
+
+<div >
+  <img width="800" height="500" src="./forte-arpeggios.png">
+</div>
+
+## Save your favourite scales ❤️:
+
+<div >
+  <img width="500" height="500" src="./forte-saved.png">
+</div>
+
+## View notes as numbers
+
+<div >
+  <img width="300" height="200" src="./forte-notes-nums.png">
+</div>
+
+## Triads as Seventh Chords
+
+<div >
+  <img width="400" height="100" src="./forte-triads.png">
+</div>
+
+Keep an eye out for incremental improvements in the future!
 
 © Paul J. Walsh
