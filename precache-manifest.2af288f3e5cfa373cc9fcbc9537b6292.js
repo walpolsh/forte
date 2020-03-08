@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "98b5d3ab6e15d7da11082468bda8cd52",
+    "revision": "1bf50c3876fb5bc63fcef9d128a24323",
     "url": "/forte/index.html"
   },
   {
-    "revision": "9c04eed4f6c24c63a08b",
+    "revision": "84a10853f3790031ec7a",
     "url": "/forte/static/css/main.94558d28.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/forte/static/js/3.ea827e28.chunk.js"
   },
   {
-    "revision": "9c04eed4f6c24c63a08b",
-    "url": "/forte/static/js/main.0aca11f9.chunk.js"
+    "revision": "84a10853f3790031ec7a",
+    "url": "/forte/static/js/main.3dac8d2c.chunk.js"
   },
   {
     "revision": "66a4e5e3b26818cccd8e",

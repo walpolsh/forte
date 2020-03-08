@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/forte/static/css/main.94558d28.chunk.css",
-    "main.js": "/forte/static/js/main.0aca11f9.chunk.js",
-    "main.js.map": "/forte/static/js/main.0aca11f9.chunk.js.map",
+    "main.js": "/forte/static/js/main.3dac8d2c.chunk.js",
+    "main.js.map": "/forte/static/js/main.3dac8d2c.chunk.js.map",
     "runtime-main.js": "/forte/static/js/runtime-main.23e0ca32.js",
     "runtime-main.js.map": "/forte/static/js/runtime-main.23e0ca32.js.map",
     "static/js/2.904b3598.chunk.js": "/forte/static/js/2.904b3598.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.ea827e28.chunk.js": "/forte/static/js/3.ea827e28.chunk.js",
     "static/js/3.ea827e28.chunk.js.map": "/forte/static/js/3.ea827e28.chunk.js.map",
     "index.html": "/forte/index.html",
-    "precache-manifest.4f8cbe552641ef93e93653225f8a7922.js": "/forte/precache-manifest.4f8cbe552641ef93e93653225f8a7922.js",
+    "precache-manifest.2af288f3e5cfa373cc9fcbc9537b6292.js": "/forte/precache-manifest.2af288f3e5cfa373cc9fcbc9537b6292.js",
     "service-worker.js": "/forte/service-worker.js",
     "static/css/main.94558d28.chunk.css.map": "/forte/static/css/main.94558d28.chunk.css.map",
     "static/media/forté-rect.png": "/forte/static/media/forté-rect.d81bf0bc.png"
@@ -19,6 +19,6 @@
     "static/js/runtime-main.23e0ca32.js",
     "static/js/2.904b3598.chunk.js",
     "static/css/main.94558d28.chunk.css",
-    "static/js/main.0aca11f9.chunk.js"
+    "static/js/main.3dac8d2c.chunk.js"
   ]
 }
