@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import ReactDOM from "react-dom";
-// import ScaleInfo from "./components/ScaleInfo/ScaleInfo";
 import "./styles.css";
 import { Main } from "./styledComponents";
 import { TopBar } from "./components/SideBar/TopBar";

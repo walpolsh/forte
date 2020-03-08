@@ -6,7 +6,7 @@
 
 Forté provides a colourful and dynamic way to visualize musical scales, chords and modes for multiple instruments.
 
-Every scale, chord and mode has been algorithmically generated to provide a venerable encylopedia for musicians of any background.
+Every scale, chord and mode has been algorithmically generated to provide a venerable encyclopedia for musicians of any background.
 
 ## Designed mobile first:
 
